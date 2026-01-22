@@ -1,0 +1,276 @@
+/* Minimal Academic Homepage Stylesheet */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: #333;
+    --text-light: #666;
+    --link-color: #0066cc;
+    --bg-color: #fff;
+    --border-color: #eee;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+}
+
+.nav-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.nav-name:hover {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* Layout */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 30px 60px;
+    display: flex;
+    gap: 60px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.sidebar h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.sidebar .title {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.sidebar .affiliation {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.sidebar .contact {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.sidebar .contact p {
+    margin: 8px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.sidebar .contact i {
+    width: 16px;
+    color: var(--text-light);
+    margin-top: 3px;
+}
+
+.sidebar .links {
+    text-align: left;
+}
+
+.sidebar .links a {
+    display: block;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.sidebar .links i {
+    width: 18px;
+    margin-right: 5px;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section p {
+    margin-bottom: 12px;
+}
+
+/* News */
+#news ul {
+    list-style: none;
+}
+
+#news li {
+    margin: 8px 0;
+}
+
+.date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Publications */
+.note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.pub {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid var(--border-color);
+}
+
+.pub-title {
+    font-weight: 600;
+}
+
+.pub em {
+    color: var(--text-light);
+}
+
+.pub a {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+/* Education & Experience */
+.education-list {
+    list-style: none;
+}
+
+.education-list li {
+    margin-bottom: 15px;
+}
+
+.education-list .sub {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 70px 20px 30px;
+        gap: 40px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .sidebar .contact,
+    .sidebar .links {
+        text-align: center;
+    }
+
+    .sidebar .contact p {
+        justify-content: center;
+    }
+}
